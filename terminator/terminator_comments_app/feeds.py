@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2012, 2013 Leandro Regueiro
 #
@@ -21,8 +21,8 @@ from django.contrib.comments.feeds import LatestCommentFeed
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
 
-from terminator.models import ConceptLanguageCommentsThread
-from terminator_comments_app import get_model
+from terminator.terminator.models import ConceptLanguageCommentsThread
+from . import get_model
 
 
 class CommentThreadFeed(LatestCommentFeed):

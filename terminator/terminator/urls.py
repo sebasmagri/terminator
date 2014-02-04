@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -19,15 +19,16 @@
 from django.conf.urls.defaults import patterns, url
 from django.contrib.comments.feeds import LatestCommentFeed
 
-from terminator.feeds import LatestChangesFeed, LatestChangesGenericFeed
-from terminator.models import Concept, Glossary, Proposal, Translation
-from terminator.views import (ConceptDetailView, GlossaryDetailView,
-                              TerminatorDetailView, TerminatorListView,
-                              TerminatorTemplateView)
-from terminator_comments_app.feeds import CommentThreadFeed
+from .feeds import LatestChangesFeed, LatestChangesGenericFeed
+from .models import Concept, Glossary, Proposal, Translation
+from .views import (ConceptDetailView, GlossaryDetailView,
+                    TerminatorDetailView, TerminatorListView,
+                    TerminatorTemplateView)
+from terminator.terminator_comments_app.feeds import CommentThreadFeed
 
 
-urlpatterns = patterns('terminator.views',
+urlpatterns = patterns(
+    'terminator.terminator.views',
     url(r'^$',
         'terminator_index',
         name='terminator_index'),

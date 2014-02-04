@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -16,8 +16,8 @@
 # You should have received a copy of the GNU General Public License along with
 # Terminator. If not, see <http://www.gnu.org/licenses/>.
 
-from terminator_comments_app.forms import TerminatorCommentForm
-from terminator_comments_app.models import TerminatorComment
+from .forms import TerminatorCommentForm
+from .models import TerminatorComment
 
 
 def get_model():

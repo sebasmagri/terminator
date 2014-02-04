@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -19,7 +19,7 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
 
-from terminator.models import *
+from .models import *
 
 
 class SearchForm(forms.Form):

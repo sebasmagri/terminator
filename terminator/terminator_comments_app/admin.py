@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.contrib.comments.admin import CommentsAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from terminator_comments_app.models import TerminatorComment
+from .models import TerminatorComment
 
 
 class TerminatorCommentAdmin(CommentsAdmin):

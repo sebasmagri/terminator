@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -16,16 +16,17 @@
 # You should have received a copy of the GNU General Public License along with
 # Terminator. If not, see <http://www.gnu.org/licenses/>.
 
-from django.conf.urls.defaults import include, patterns, url
+from django.conf.urls import include, patterns, url
 from django.contrib import admin
 
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^', include('terminator.urls')),
+    url(r'^', include('terminator.terminator.urls')),
 )

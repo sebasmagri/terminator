@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -17,21 +17,13 @@
 # You should have received a copy of the GNU General Public License along with
 # Terminator. If not, see <http://www.gnu.org/licenses/>.
 
-import imp
-from django.core.management import execute_manager
+import os
 
+from funfactory import manage
 
-try:
-    imp.find_module('settings')  # Assumed to be in the same directory.
-except ImportError:
-    import sys
-    sys.stderr.write("Error: Can't find the file 'settings.py' in the "
-                     "directory containing %r. It appears you've customized "
-                     "things.\nYou'll have to run django-admin.py, passing it "
-                     "your settings module.\n" % __file__)
-    sys.exit(1)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'terminator.settings')
 
-import settings
+manage.setup_environ(__file__, more_pythonic=True)
 
 if __name__ == "__main__":
-    execute_manager(settings)
+    manage.main()

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "terminator/base.html" %}
 {% load i18n %}
 
 {% comment %}
@@ -28,7 +28,7 @@ along with Terminator.  If not, see <http://www.gnu.org/licenses/>.
     
     <div class="search_form">
         <form action="{% url terminator_search %}" method="get">
-            {% include "search_form_snippet.html" %}
+            {% include "terminator/search_form_snippet.html" %}
         </form>
         {% url terminator_advanced_search as advanced_search_url %}
         {% blocktrans %}You may also try the <a href="{{ advanced_search_url }}">advanced search</a>{% endblocktrans %}.

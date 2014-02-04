@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -38,10 +38,10 @@ from guardian.shortcuts import get_perms
 from profiles.views import (create_profile, edit_profile, profile_detail,
                             profile_list)
 
-from terminator.forms import (AdvancedSearchForm, CollaborationRequestForm,
-                              ExportForm, ImportForm, ProposalForm, SearchForm,
-                              SubscribeForm)
-from terminator.models import *
+from .forms import (AdvancedSearchForm, CollaborationRequestForm,
+                    ExportForm, ImportForm, ProposalForm, SearchForm,
+                    SubscribeForm)
+from .models import *
 
 
 def terminator_profile_create(request):
@@ -289,7 +289,7 @@ def terminator_index(request):
         'latest_translation_changes': translation_changes,
     }
 
-    return render_to_response('index.html', context,
+    return render_to_response('terminator/index.html', context,
                               context_instance=RequestContext(request))
 
 
@@ -462,7 +462,7 @@ def export(request):
         #'exporting_message': exporting_message,#TODO show export confirmation message
         'next': request.get_full_path(),
     }
-    return render_to_response('export.html', context,
+    return render_to_response('terminator/export.html', context,
                               context_instance=RequestContext(request))
 
 
@@ -981,7 +981,7 @@ def import_view(request):
     else:
         import_form = ImportForm()
     context['import_form'] = import_form
-    return render_to_response('import.html', context,
+    return render_to_response('terminator/import.html', context,
                               context_instance=RequestContext(request))
 
 
@@ -1057,9 +1057,9 @@ def search(request):
         'next': request.get_full_path(),
     }
 
-    template_name = 'search.html'
+    template_name = 'terminator/search.html'
     if "advanced" in request.path:
-        template_name = 'advanced_search.html'
+        template_name = 'terminator/advanced_search.html'
 
     return render_to_response(template_name, context,
                               context_instance=RequestContext(request))

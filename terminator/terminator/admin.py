@@ -1,4 +1,4 @@
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 # Copyright 2011, 2013 Leandro Regueiro
 #
@@ -26,10 +26,10 @@ from guardian.admin import GuardedModelAdmin
 from guardian.shortcuts import get_objects_for_user
 from guardian.utils import clean_orphan_obj_perms
 
-from terminator.forms import (TerminatorConceptAdminForm,
-                              TerminatorGlossaryAdminForm,
-                              TerminatorTranslationAdminForm)
-from terminator.models import *
+from .forms import (TerminatorConceptAdminForm,
+                    TerminatorGlossaryAdminForm,
+                    TerminatorTranslationAdminForm)
+from .models import *
 
 
 class PartOfSpeechForLanguageInline(admin.TabularInline):
