@@ -16,7 +16,9 @@
 # You should have received a copy of the GNU General Public License along with
 # Terminator. If not, see <http://www.gnu.org/licenses/>.
 
-import os.path
+import os
+
+PROJECT_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 DEBUG = False
@@ -42,7 +44,7 @@ TIME_ZONE = 'Europe/Madrid'
 LANGUAGE_CODE = 'en-us'
 
 LOCALE_PATHS = (
-    os.path.join(os.path.dirname(__file__), 'locale').replace('\\', '/'),
+    os.path.join(PROJECT_DIR, 'locale').replace('\\', '/'),
 )
 
 SITE_ID = 1
@@ -114,7 +116,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\', '/'),
+    os.path.join(PROJECT_DIR, 'templates').replace('\\', '/'),
 )
 
 AUTHENTICATION_BACKENDS = (
