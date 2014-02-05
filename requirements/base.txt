@@ -1,6 +1,6 @@
-Django>=1.3.0,<1.5
+Django
 
 # Django apps
 django-guardian 
 django-registration 
-django-profiles 
+-e git+https://github.com/rh0dium/django-profiles.git#egg=django-profiles

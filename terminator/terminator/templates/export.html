@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% comment %}
+Copyright 2011 Leandro Regueiro
+
+This file is part of Terminator.
+
+Terminator is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Terminator is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Terminator.  If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+
+{% block breadcrumbs %}
+    » <a href="{% url 'terminator_export' %}">{% trans "Export" %}</a>
+{% endblock %}
+
+{% block content %}
+    <h1><img src="{{ STATIC_PREFIX }}images/icon_export_32.png" />{% trans "Export" %}</h1>
+    
+    <div class="search_form">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table class="center">
+            {% for field in export_form %}
+                <tr>{% if field.errors %}
+                    <td colspan="2">{{ field.errors }}</td>
+                </tr>
+                <tr>{# #TODO find out how can be highlighted the form fields with errors #}<!--<tr class="errors">-->{% endif %}
+                    <td class="left_field">{% if forloop.first %}<b>{% endif %}{{ field.label_tag }}:{% if forloop.first %}<b>{% endif %}</td>
+                    <td class="right_field">{{ field }}</td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td class="left_field"><input type="submit" value="{% trans 'Export' %}" /></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+{% endblock %}
